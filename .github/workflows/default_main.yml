@@ -1,0 +1,24 @@
+name: Bootcamp 2020 Urdu    # Name of the workflow
+
+on:
+  push:   # Trigger the workflow when code is pushed to the main branch
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: windows-latest    # Use the latest version of windows as the runner
+
+    steps:
+    - name: Checkout code    # Checkout the code from the repo
+      uses: actions/checkout@v2
+
+    - name: Install Surge CLI   # Install the Surge CLI globally
+      run: npm install -g surge
+
+    - name: Build and deploy website   # Build the static files and deploy to Surge
+      run: |
+        npm run build   # Build the static files
+        surge ./build grumpy-room.surge.sh    # Deploy to Surge with the specified URL
+      env:
+        SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}    # Set the Surge token from a secret
