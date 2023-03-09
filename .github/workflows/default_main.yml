@@ -16,7 +16,7 @@ jobs:
     - name: Installing Node     # Checkout the code from the repo
       uses: actions/setup-node@v2-beta
       with: 
-          npm-version: 12
+          npm-version: 16
 
     - name: Install Surge CLI   # Install the Surge CLI globally
       run: npm install -g surge
