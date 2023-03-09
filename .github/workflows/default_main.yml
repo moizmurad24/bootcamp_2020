@@ -13,7 +13,6 @@ jobs:
     - name: Checkout code    # Checkout the code from the repo
       uses: actions/checkout@v2
 
-      steps:
     - name: Installing Node     # Checkout the code from the repo
       uses: actions/setup-node@v2-beta
       with: 
