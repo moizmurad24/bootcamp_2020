@@ -18,7 +18,5 @@ jobs:
         node-version: '14.x'
 
     - name: Deploy to Surge
-      run: npx surge ./build grumpy-room.surge.sh
-      env:
-        SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
-        SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+      run:  npm install --global surge
+      run:  surge ./ grumpy-room.surge.sh --token ${{ secrets.SURGE_TOKEN }}
