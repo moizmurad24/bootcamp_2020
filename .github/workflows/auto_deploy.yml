@@ -19,4 +19,5 @@ jobs:
 
     - name: Deploy to Surge
       run:  npm install --global surge
+    - name: Deploy to Surge again
       run:  surge ./ grumpy-room.surge.sh --token ${{ secrets.SURGE_TOKEN }}
