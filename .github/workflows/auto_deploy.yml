@@ -24,7 +24,7 @@ jobs:
       run: npm run build
 
     - name: Deploy to Surge
-      run: npx surge ./build http://grumpy-room.surge.sh/
+      run: npx surge ./build grumpy-room.surge.sh
       env:
         SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
         SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
